@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@mui/material": "^9.2.0",
-    "framer-motion": "^12.42.2",
-    "jszip": "^3.10.1",
-    "lucide-react": "^1.23.0",
-    "material": "^1.0.3"
-  }
-}
