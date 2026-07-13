@@ -5,7 +5,8 @@
             "framework": "vite"
         },
         "backend": {
-            "root": "backend"
+            "root": "backend",
+            "framework": "fastapi"
         }
     },
     "rewrites": [
@@ -13,7 +14,7 @@
             "source": "/api(/.*)?",
             "destination": {
                 "type": "service",
-                "service": "backend"
+                "service": "/api/main"
             }
         },
         {
