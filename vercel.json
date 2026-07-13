@@ -1,28 +1,22 @@
 {
-    "services": {
-        "frontend": {
-            "root": "frontend",
-            "framework": "vite"
-        },
-        "backend": {
-            "root": "backend",
-            "framework": "fastapi"
-        }
+  "services": {
+    "frontend": { 
+      "root": "frontend", 
+      "framework": "vite" 
     },
-    "rewrites": [
-        {
-            "source": "/api(/.*)?",
-            "destination": {
-                "type": "service",
-                "service": "/api/main"
-            }
-        },
-        {
-            "source": "/(.*)",
-            "destination": {
-                "type": "service",
-                "service": "frontend"
-            }
-        }
-    ]
+    "backend": { 
+      "root": "backend", 
+      "framework": "fastapi" 
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "frontend" }
+    }
+  ]
 }
