@@ -1,6 +1,14 @@
 {
-  "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/main.py" },
-    { "source": "/(.*)", "destination": "/frontend/index.html" }
+  "builds": [
+    {
+      "src": "/backend/api/app.py",  // Specify the source file for your API, a Python script
+      "use": "@vercel/python"       // Use the official Vercel Python runtime to build your project
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",  // Define a route to capture all requests (.* matches any path)
+      "dest": "backend/api/app.py" // Forward those requests to the Python app
+    }
   ]
-} 
+}
