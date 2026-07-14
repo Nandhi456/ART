@@ -18,6 +18,11 @@ from datetime import datetime
 
 
 app = FastAPI(title="Resume Tracker API")
+
+@app.get("/healthz")
+def health():
+    return {"status": "ok"}
+ 
  
 app.add_middleware(
     CORSMiddleware,
