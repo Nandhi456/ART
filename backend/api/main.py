@@ -7,7 +7,7 @@ import spacy
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from schemas import (ExtractRequest, ExtractResponse, FolderFile, RecentFiles, Statistics, PreviewData, SearchRequest)
-from pymupdf import fitz  
+import pymupdf  
 import zipfile
 import shutil
 from fastapi.responses import FileResponse
@@ -48,13 +48,13 @@ JOB_STATUS = {
     "current_file": ""
 }
  
-nlp = spacy.load("en_core_web_sm")
+#nlp = spacy.load("en_core_web_sm")
 
 
 def extract_text_from_pdf(path):
     text = ""
     try:
-        doc = fitz.open(path)
+        doc = pymupdf.open(path)
         for page in doc:
             text += page.get_text()
         doc.close()
