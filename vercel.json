@@ -3,4 +3,4 @@
     { "source": "/api/:path*", "destination": "/api/main.py" },
     { "source": "/(.*)", "destination": "/frontend/index.html" }
   ]
-}
+} 
