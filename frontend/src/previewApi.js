@@ -4,7 +4,7 @@ async function request(path, options = {}) {
   const response = await fetch(`${API_BASE}${path}`, options);
 
   if (!response.ok) {
-    let error = {};
+    let error = {}; 
     try {
       error = await response.json();
     } catch {}
