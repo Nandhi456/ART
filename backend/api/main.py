@@ -17,7 +17,6 @@ from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 from datetime import datetime
 
 
-
 app = FastAPI(title="Resume Tracker API")
  
 app.add_middleware(
